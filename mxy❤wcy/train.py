@@ -3,7 +3,7 @@ import sys
 
 # add dir
 dir_name = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.join(dir_name,'./auxiliary/'))
+sys.path.append(os.path.join(dir_name,'./auxiliary/'))#?
 print(dir_name)
 
 import argparse
@@ -71,7 +71,7 @@ start_epoch = 1
 if opt.optimizer.lower() == 'adam':
     optimizer = optim.Adam(model_restoration.parameters(), lr=opt.lr_initial, betas=(0.9, 0.999),eps=1e-8, weight_decay=opt.weight_decay)
 elif opt.optimizer.lower() == 'adamw':
-        optimizer = optim.AdamW(model_restoration.parameters(), lr=opt.lr_initial, betas=(0.9, 0.999),eps=1e-8, weight_decay=opt.weight_decay)
+    optimizer = optim.AdamW(model_restoration.parameters(), lr=opt.lr_initial, betas=(0.9, 0.999),eps=1e-8, weight_decay=opt.weight_decay)
 else:
     raise Exception("Error optimizer...")
 
